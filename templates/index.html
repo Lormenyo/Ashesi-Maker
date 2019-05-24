@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashesi-Maker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="{{ url_for('index') }}"><i class="glyphicon glyphicon-phone"></i>Ashesi Maker</a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+<!-- Insert tabs for naav -->
+        </div>
+    </nav>
+
+    <!-- Section describing the purpose of the page -->
+    <div class="jumbotron hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-push-7 phone-preview">
+                    <div class="iphone-mockup"><img src="{{ url_for('static', filename='img/iphone.svg' )}}" class="device">
+                        <div class="screen"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-pull-3 get-it">
+                    <div id = "faux">                    
+                        <h1>Ashesi Maker</h1>
+                        <div id="faux-p">                        
+                            <p>Ashesi Maker is a web app where students can request for components they need to complete any engineering project.
+                                It is also keeps track of all the components that has been borrowed, making life easy for both students and engineering faculty.
+                            </p>
+                        </div>
+                        <button class="btn btn-primary" id="showbtn" onclick='showForm()'>Request for component</button>
+                    </div>
+
+                    <div class= "order-form request-form">
+                        <form method="POST", action="/submitForm">
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                </div>
+                                <input name="name" class="form-control" placeholder="Full name" type="text" required>
+                            </div>
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                                </div>
+                                <input name="email" class="form-control" placeholder="Email address" type="email" required>
+                            </div>
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-phone"></i></span>
+                                </div>
+                                <input class="form-control" placeholder="Phone" type="text" name="phone" required>
+                            </div>
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                    <div class="dropdown">
+                                            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">Class <span class="caret"></span></button>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li role="presentation"> <a href="">{{ final_year }} </a></li>
+                                                <li role="presentation"><a href="">{{ third_year }} </a>  </li>
+                                                <li role="presentation"><a href=""> {{ second_year }} </a> </li>
+                                                <li role="presentation"><a href=""> {{ first_year }} </a>  </li>
+                                            </ul>
+                                        </div>
+                            </div>
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                                </div>
+                                <input name="purpose" class="form-control" placeholder="Purpose" type="text" required>
+                            </div>
+                            <center><button class="btn btn-primary sub-btn">Submit</button></center> 
+                         </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Testimonial from a student -->
+    <section class="testimonials">
+        <h2 class="text-center">Students Love It!</h2>
+        <blockquote>
+            <p>I can easily request for components without physically being present</p>
+            <footer>Hannah Lormenyo</footer>
+        </blockquote>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5>Ashesi Maker © 2019</h5></div>
+                    <div class="col-sm-6 social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                </div>
+            </div>
+    </footer>
+
+
+    <!-- Supporting javascript files used -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/maker.js')}}"></script>
+</body>
+
+</html>

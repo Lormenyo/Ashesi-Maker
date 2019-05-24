@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashesi-Maker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/Google-Style-Login.css') }}">
+</head>
+<body id='bgr'>
+        <!-- Navigation bar -->
+        <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header"><a class="navbar-brand navbar-link" href="{{ url_for('index') }}"><i class="glyphicon glyphicon-phone"></i>Ashesi Maker</a>
+                        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                    </div>
+        <!-- Insert tabs for naav -->
+                </div>
+            </nav>
+
+    <center><div id='form-cards'>    
+        
+             <div class="phone">
+                    <div class="phone-preview">
+                        <div class="iphone-mockup"><img src="{{ url_for('static', filename='img/iphone.svg' )}}" class="device">
+                            <div class="screen">
+                              <!-- Login form -->
+                                <div class="login-card" style="height: 100%">
+                                    <img src="{{ url_for('static', filename='img/avatar_2x.png') }}" class="profile-img-card">
+                                  <p class="profile-name-card"> Admin</p>
+                                  <form class="form-signin"><span class="reauth-email"> </span>
+                                    <button class="btn btn-primary btn-block btn-lg btn-signin" onclick="signIn()">Sign In</button>
+                                        <h3> Or.. </h3>
+                                      <button class="btn btn-primary btn-block btn-lg btn-signin"  onclick="signUp()">Sign Up</button>
+                                  </form></div>
+            
+                                </div>
+                        </div>
+                    </div>
+                   </div> 
+
+                    <!-- Login form -->
+                <div class="login-card" id="login"><img src="{{ url_for('static', filename='img/avatar_2x.png') }}" class="profile-img-card">
+                      <p class="profile-name-card"> </p>
+                      <form class="form-signin"><span class="reauth-email"> </span>
+                          <input class="form-control" type="email" required="" placeholder="Email address" autofocus="" id="inputEmail">
+                          <input class="form-control" type="password"  placeholder="Password" required>
+                          <div class="checkbox">
+                              <div class="checkbox">
+                                  <label>
+                                      <input type="checkbox">Remember me</label>
+                              </div>
+                          </div>
+                          <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Sign in</button>
+                      </form><a href="#" class="forgot-password">Forgot your password?</a></div>
+          
+                  <!- Registration form  -->
+                  <div class="login-card" id="register">
+                      <center><h1 style="font-size: 30px">Register Form</h1></center> 
+                      <form class="form-signin"><span class="reauth-email"> </span>
+                          <input class="form-control" type="text" required="" placeholder="Full Name" name="FullName">
+                          <input class="form-control" type="text" required="" placeholder="ID Number" name="id">
+                          <input class="form-control" type="email" required="" placeholder="Email address" autofocus="" name="email">
+                          <input class="form-control" type="password" required="" placeholder="Password" id="inputPassword">
+                          <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Sign Up</button>
+                      </form></div>                   
+         </div></center>
+              
+<!--     
+    <div class="col-md-6 col-md-pull-3 get-it">
+          < Login form -->
+          <!-- <div class="login-card" id="login"><img src="{{ url_for('static', filename='img/avatar_2x.png') }}" class="profile-img-card">
+            <p class="profile-name-card"> </p>
+            <form class="form-signin"><span class="reauth-email"> </span>
+                <input class="form-control" type="email" required="" placeholder="Email address" autofocus="" id="inputEmail">
+                <input class="form-control" type="password" required="" placeholder="Password" id="inputPassword">
+                <div class="checkbox">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox">Remember me</label>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Sign in</button>
+            </form><a href="#" class="forgot-password">Forgot your password?</a></div>
+
+        <!- Registration form  -->
+        <!-- <div class="login-card" id="register">
+            <center><h1 style="font-size: 30px">Register Form</h1></center> 
+            <form class="form-signin"><span class="reauth-email"> </span>
+                <input class="form-control" type="text" required="" placeholder="Full Name" name="FullName">
+                <input class="form-control" type="text" required="" placeholder="ID Number" name="id">
+                <input class="form-control" type="email" required="" placeholder="Email address" autofocus="" name="email">
+                <input class="form-control" type="password" required="" placeholder="Password" id="inputPassword">
+                <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Sign Up</button>
+            </form></div>
+            </div>        
+    </div>  
+    </center>  -->
+
+
+                    <!-- Supporting javascript files used -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/maker.js')}}"></script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>Ashesi-Maker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+</head>
+<body>
+	    <!-- Navigation bar -->
+		<nav class="navbar navbar-default">
+				<div class="container">
+					<div class="navbar-header"><a class="navbar-brand navbar-link" href="{{ url_for('index') }}"><i class="glyphicon glyphicon-phone"></i>Ashesi Maker</a>
+						<button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+					</div>
+		<!-- Insert tabs for naav -->
+		<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"> <span class="caret"></span><img src="{{ url_for('static', filename='img/avatar.jpg')}}" class="dropdown-image" /></a>
+					<ul class="dropdown-menu dropdown-menu-right" role="menu">
+						<li role="presentation"><a href="#">Sign out</a></li>
+						<li role="presentation"><a href="#">Payments </a></li>
+						<li role="presentation" class="active"><a href="#">Logout </a></li>
+					</ul>
+				</li>
+			</ul>
+				</div>
+			</nav>
+
+<div id='form-cards'>    
+<div class="container">
+   
+    	<div class="row">
+			<div class="col-md-10">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Requests
+						<div class="pull-right">
+							<span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+								<i class="glyphicon glyphicon-filter" style="margin-top:2px"></i>
+							</span>
+						</div>
+					</div></h3>
+					<div class="panel-body">
+						<input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" />
+					</div>
+					<table class="table table-hover" id="dev-table">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Name</th>
+								<th>Class</th>
+								<th>Components</th>
+								<th>Purpose</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>Kilgore</td>
+								<td>Trout</td>
+								<td>kilgore</td>
+								<td>for circuits project</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Bob</td>
+								<td>Loblaw</td>
+								<td>boblahblah</td>
+								<td>for circuits project</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Holden</td>
+								<td>Caulfield</td>
+								<td>penceyreject</td>
+								<td>for circuits project</td>
+							</tr>
+						</tbody>
+
+						<tfoot>
+							<tr>
+								<th>#</th>
+								<th>Name</th>
+								<th>Class</th>
+								<th>Components</th>
+								<th>Purpose</th>
+							</tr>
+					</tfoot>
+					</table>
+				</div>
+			</div>
+			
+			</div>
+		</div>
+</div>
+
+
+
+    <!-- Supporting javascript files used -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/maker.js')}}"></script>
+</body>
+</html>
